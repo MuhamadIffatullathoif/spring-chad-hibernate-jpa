@@ -3,7 +3,7 @@ package com.iffat.springchadhibernatejpa.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "intstructor_detail")
+@Table(name = "instructor_detail")
 public class InstructorDetail {
 
     @Id
