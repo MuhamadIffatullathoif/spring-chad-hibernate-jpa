@@ -23,8 +23,12 @@ public class SpringChadHibernateJpaApplication {
     }
 
     private void createInstructor(AppDAO appDAO) {
+        /*
         Instructor instructor = new Instructor("Muhamad", "Iffat", "Iffat@gmail.com");
         InstructorDetail instructorDetail = new InstructorDetail("http://www.youtube/muhamad", "football");
+         */
+        Instructor instructor = new Instructor("Madhu", "Patel", "patel@gmail.com");
+        InstructorDetail instructorDetail = new InstructorDetail("http://www.youtube/muhamad", "badminton");
         instructor.setInstructorDetail(instructorDetail);
         appDAO.save(instructor);
     }
