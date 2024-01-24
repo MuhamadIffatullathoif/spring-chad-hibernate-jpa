@@ -19,8 +19,14 @@ public class SpringChadHibernateJpaApplication {
     public CommandLineRunner commandLineRunner(AppDAO appDAO) {
         return runner -> {
 //            createInstructor(appDAO);
-            findInstructor(appDAO);
+//            findInstructor(appDAO);
+            deleteInstructor(appDAO);
         };
+    }
+
+    private void deleteInstructor(AppDAO appDAO) {
+        int id = 2;
+        appDAO.deleteInstructorById(id);
     }
 
     private void findInstructor(AppDAO appDAO) {
