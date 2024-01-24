@@ -3,9 +3,10 @@ package com.iffat.springchadhibernatejpa.dao;
 import com.iffat.springchadhibernatejpa.entity.Instructor;
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-@Service
+@Repository
 public class AppDAOImpl implements AppDAO {
 
     private final EntityManager entityManager;
@@ -16,7 +17,8 @@ public class AppDAOImpl implements AppDAO {
     }
 
     @Override
+    @Transactional
     public void save(Instructor instructor) {
-
+        this.entityManager.persist(instructor);
     }
 }
