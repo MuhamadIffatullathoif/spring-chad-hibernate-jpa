@@ -31,7 +31,8 @@ public class SpringChadHibernateJpaApplication {
             // findCoursesForInstructor(appDAO);
             // findInstructorJoinFetch(appDAO);
             // updateInstructor(appDAO);
-            updateCourse(appDAO);
+            // updateCourse(appDAO);
+            deleteInstructor(appDAO);
         };
     }
 
@@ -100,7 +101,7 @@ public class SpringChadHibernateJpaApplication {
     }
 
     private void deleteInstructor(AppDAO appDAO) {
-        int id = 2;
+        int id = 1;
         appDAO.deleteInstructorById(id);
     }
 
