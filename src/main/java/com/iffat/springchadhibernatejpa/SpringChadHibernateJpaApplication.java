@@ -21,8 +21,14 @@ public class SpringChadHibernateJpaApplication {
             // createInstructor(appDAO);
             // findInstructor(appDAO);
             // deleteInstructor(appDAO);
-            findInstructorDetail(appDAO);
+            // findInstructorDetail(appDAO);
+            deleteInstructorDetail(appDAO);
         };
+    }
+
+    private void deleteInstructorDetail(AppDAO appDAO) {
+        int id = 1;
+        appDAO.deleteInstructorDetailById(id);
     }
 
     private void findInstructorDetail(AppDAO appDAO) {
