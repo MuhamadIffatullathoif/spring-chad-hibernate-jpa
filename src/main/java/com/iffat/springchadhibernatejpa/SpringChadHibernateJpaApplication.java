@@ -27,7 +27,7 @@ public class SpringChadHibernateJpaApplication {
     }
 
     private void deleteInstructorDetail(AppDAO appDAO) {
-        int id = 1;
+        int id = 3;
         appDAO.deleteInstructorDetailById(id);
     }
 
