@@ -37,8 +37,22 @@ public class SpringChadHibernateJpaApplication {
             // deleteCourseAndReviews(appDAO);
             // createCourseAndStudents(appDAO);
             // findCourseAndStudents(appDAO);
-            findStudentAndCourses(appDAO);
+            // findStudentAndCourses(appDAO);
+            addMoreCoursesToStudent(appDAO);
         };
+    }
+
+    private void addMoreCoursesToStudent(AppDAO appDAO) {
+        int id = 2;
+        Student student = appDAO.findStudentAndCoursesByStudentId(id);
+
+        Course course1 = new Course("Java Professional 2024");
+        Course course2 = new Course("Angular Developer 2024");
+
+        student.addCourse(course1);
+        student.addCourse(course2);
+
+        appDAO.update(student);
     }
 
     private void findStudentAndCourses(AppDAO appDAO) {
