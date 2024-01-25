@@ -30,8 +30,17 @@ public class SpringChadHibernateJpaApplication {
             // findInstructorWithCourses(appDAO);
             // findCoursesForInstructor(appDAO);
             // findInstructorJoinFetch(appDAO);
-            updateInstructor(appDAO);
+            // updateInstructor(appDAO);
+            updateCourse(appDAO);
         };
+    }
+
+    private void updateCourse(AppDAO appDAO) {
+        int id = 10;
+        Course course = appDAO.findCourseById(id);
+
+        course.setTitle("Java Master 2024");
+        appDAO.update(course);
     }
 
     private void updateInstructor(AppDAO appDAO) {
