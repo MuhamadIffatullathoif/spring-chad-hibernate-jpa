@@ -3,6 +3,7 @@ package com.iffat.springchadhibernatejpa.dao;
 import com.iffat.springchadhibernatejpa.entity.Course;
 import com.iffat.springchadhibernatejpa.entity.Instructor;
 import com.iffat.springchadhibernatejpa.entity.InstructorDetail;
+import com.iffat.springchadhibernatejpa.entity.Student;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -119,10 +120,19 @@ public class AppDAOImpl implements AppDAO {
 
     @Override
     public Course findCourseAndStudentByCourseId(int id) {
-        TypedQuery<Course> query = entityManager.createQuery("" +
+        TypedQuery<Course> query = entityManager.createQuery(
                 "select c from Course c join fetch c.students where c.id = :data", Course.class);
         query.setParameter("data", id);
         Course course = query.getSingleResult();
         return course;
+    }
+
+    @Override
+    public Student findStudentAndCoursesByStudentId(int id) {
+        TypedQuery<Student> query = entityManager.createQuery(
+                "select s from Student s join fetch s.courses where s.id = :data",Student.class);
+        query.setParameter("data", id);
+        Student student = query.getSingleResult();
+        return student;
     }
 }

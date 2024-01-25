@@ -3,6 +3,7 @@ package com.iffat.springchadhibernatejpa.dao;
 import com.iffat.springchadhibernatejpa.entity.Course;
 import com.iffat.springchadhibernatejpa.entity.Instructor;
 import com.iffat.springchadhibernatejpa.entity.InstructorDetail;
+import com.iffat.springchadhibernatejpa.entity.Student;
 
 import java.util.List;
 
@@ -21,4 +22,5 @@ public interface AppDAO {
     void save(Course course);
     Course findCourseAndReviewsByCourseId(int id);
     Course findCourseAndStudentByCourseId(int id);
+    Student findStudentAndCoursesByStudentId(int id);
 }
