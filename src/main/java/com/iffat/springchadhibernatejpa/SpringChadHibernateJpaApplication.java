@@ -36,8 +36,14 @@ public class SpringChadHibernateJpaApplication {
             // deleteInstructor(appDAO);
             // deleteCourse(appDAO);
             // createCourseAndReviews(appDAO);
-            retrieveCourseAndReviews(appDAO);
+            // retrieveCourseAndReviews(appDAO);
+            deleteCourseAndReviews(appDAO);
         };
+    }
+
+    private void deleteCourseAndReviews(AppDAO appDAO) {
+        int id = 10;
+        appDAO.deleteCourseById(id);
     }
 
     private void retrieveCourseAndReviews(AppDAO appDAO) {
