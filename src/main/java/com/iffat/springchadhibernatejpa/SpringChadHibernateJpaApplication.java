@@ -4,6 +4,7 @@ import com.iffat.springchadhibernatejpa.dao.AppDAO;
 import com.iffat.springchadhibernatejpa.entity.Course;
 import com.iffat.springchadhibernatejpa.entity.Instructor;
 import com.iffat.springchadhibernatejpa.entity.InstructorDetail;
+import com.iffat.springchadhibernatejpa.entity.Review;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -33,8 +34,22 @@ public class SpringChadHibernateJpaApplication {
             // updateInstructor(appDAO);
             // updateCourse(appDAO);
             // deleteInstructor(appDAO);
-            deleteCourse(appDAO);
+            // deleteCourse(appDAO);
+            createCourseAndReviews(appDAO);
         };
+    }
+
+    private void createCourseAndReviews(AppDAO appDAO) {
+        Course course = new Course("Spring Boot Master 2024");
+
+        course.addReview(new Review("The best course"));
+        course.addReview(new Review("The bad course"));
+        course.addReview(new Review("The amazing course spring boot"));
+
+        System.out.println(course);
+        System.out.println(course.getReviews());
+
+        appDAO.save(course);
     }
 
     private void deleteCourse(AppDAO appDAO) {

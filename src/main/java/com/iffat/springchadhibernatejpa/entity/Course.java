@@ -65,7 +65,7 @@ public class Course {
     }
 
     // handle unidirectional associated with joinColumn
-    public void add(Review review) {
+    public void addReview(Review review) {
         if (reviews == null) {
             reviews = new ArrayList<>();
         }
