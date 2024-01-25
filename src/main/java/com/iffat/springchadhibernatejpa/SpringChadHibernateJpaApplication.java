@@ -38,7 +38,8 @@ public class SpringChadHibernateJpaApplication {
             // createCourseAndStudents(appDAO);
             // findCourseAndStudents(appDAO);
             // findStudentAndCourses(appDAO);
-            addMoreCoursesToStudent(appDAO);
+            // addMoreCoursesToStudent(appDAO);
+            deleteCourse(appDAO);
         };
     }
 
