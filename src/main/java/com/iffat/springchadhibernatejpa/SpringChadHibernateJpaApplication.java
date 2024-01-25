@@ -29,8 +29,16 @@ public class SpringChadHibernateJpaApplication {
             // createInstructorWithCourses(appDAO);
             // findInstructorWithCourses(appDAO);
             // findCoursesForInstructor(appDAO);
-            findInstructorJoinFetch(appDAO);
+            // findInstructorJoinFetch(appDAO);
+            updateInstructor(appDAO);
         };
+    }
+
+    private void updateInstructor(AppDAO appDAO) {
+        int id = 1;
+        Instructor instructor = appDAO.findInstructorById(id);
+        instructor.setLastName("TESTER");
+        appDAO.update(instructor);
     }
 
     private void findInstructorJoinFetch(AppDAO appDAO) {
